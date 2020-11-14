@@ -11,18 +11,18 @@ go get TheYahya/random-string
 package main
 
 import (
-    "fmt"
-    "github.com/theyahya/random-string"
+	"fmt"
+	"github.com/theyahya/random-string"
 )
 
 func main() {
-    randomString := randomstring.new().Generate(10)
-    fmt.Println(randomString)
+	randStr1 := randomstring.New().Generate(10)
+	fmt.Println(randStr1) //hGhfVRtFH9
 
-    // Or with spicific characters
-    // Default is: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-"
-    randomString := randomstring.new().Letters("abcdf").Generate(10)
-    fmt.Println(randomString)
+	// Or with spicific characters
+	// Default is: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-"
+	randStr2 := randomstring.New().Letters("abcdf").Generate(10)
+	fmt.Println(randStr2) //abdcbfbdfb
 }
 ```
 
