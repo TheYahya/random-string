@@ -7,16 +7,33 @@ import (
 
 var letters = []rune("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-")
 
-func randSeq(n int) string {
+type rs struct {
+	letters []rune
+}
+
+func (r *rs) randSeq(n int) string {
 	b := make([]rune, n)
 	for i := range b {
-		b[i] = letters[rand.Intn(len(letters))]
+		b[i] = r.letters[rand.Intn(len(r.letters))]
 	}
 	return string(b)
 }
 
+// New generates a new randomstring struct
+func New() *rs {
+	return &rs{
+		letters: letters,
+	}
+}
+
+// Letters set the letters of random string
+func (r *rs) Letters(letters string) *rs {
+	r.letters = []rune(letters)
+	return r
+}
+
 // Generate a random string with the given length
-func Generate(length int) string {
+func (r *rs) Generate(length int) string {
 	rand.Seed(time.Now().UnixNano())
-	return randSeq(length)
+	return r.randSeq(length)
 }

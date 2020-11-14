@@ -16,7 +16,12 @@ import (
 )
 
 func main() {
-    randomString := randomstring.Generate(10)
+    randomString := randomstring.new().Generate(10)
+    fmt.Println(randomString)
+
+    // Or with spicific characters
+    // Default is: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-"
+    randomString := randomstring.new().Letters("abcdf").Generate(10)
     fmt.Println(randomString)
 }
 ```
