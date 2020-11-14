@@ -11,13 +11,13 @@ go get TheYahya/random-string
 package main
 
 import (
-	"fmt"
-	"github.com/theyahya/random-string"
+    "fmt"
+    "github.com/theyahya/random-string"
 )
 
 func main() {
     randomString := randomstring.Generate(10)
-	fmt.Println(randomString)
+    fmt.Println(randomString)
 }
 ```
 
