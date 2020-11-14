@@ -20,3 +20,6 @@ func main() {
 	fmt.Println(randomString)
 }
 ```
+
+## License
+Licensed under the [MIT License](https://github.com/TheYahya/random-string/blob/main/README.md).
